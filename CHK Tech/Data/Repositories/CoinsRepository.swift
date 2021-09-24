@@ -11,7 +11,7 @@ import Combine
 protocol CoinsRepositoryProtocol: AnyObject {
     var networking: NetworkingProtocol { get }
     
-    func getCoins(currency: String) -> AnyPublisher<Coins, Error>
+    func getCoins(currency: String) -> AnyPublisher<[Coin], Error>
 }
 
 final class CoinsRepository: CoinsRepositoryProtocol {
@@ -21,11 +21,13 @@ final class CoinsRepository: CoinsRepositoryProtocol {
         self.networking = networking
     }
     
-    func getCoins(currency: String) -> AnyPublisher<Coins, Error> {
+    func getCoins(currency: String) -> AnyPublisher<[Coin], Error> {
         let endpoint = Endpoint.coins(with: currency)
         
         return networking.get(type: Coins.self,
                              url: endpoint.url,
                              headers: endpoint.headers)
+            .map(\.data)
+            .eraseToAnyPublisher()
     }
 }

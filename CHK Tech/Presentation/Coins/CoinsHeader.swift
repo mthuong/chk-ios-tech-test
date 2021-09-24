@@ -13,12 +13,9 @@ struct CoinsHeader: View {
             HStack (alignment: .center) {
                 Text("PAIRS")
                 
-                
                 Spacer()
                 
                 Text("PRICE")
-                
-                
             }
             .font(.subheadline)
             .foregroundColor(.gray)

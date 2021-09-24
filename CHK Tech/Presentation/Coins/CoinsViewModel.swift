@@ -10,12 +10,14 @@ import Combine
 
 extension CoinsView {
     class ViewModel: ObservableObject {
-        @Published public var coins: Coins = Coins(data: [])
+        @Published var search: String = ""
+        
+        @Published public var coins: [Coin] = [Coin]([])
         
         private var coinsUseCase: CoinsUseCaseProtocol
         private var cancellables = Set<AnyCancellable>()
         
-        init(coins: Coins = Coins(data: []),
+        init(coins: [Coin] = [],
              coinsUseCase: CoinsUseCaseProtocol = CoinsUseCase(coinsRepository: CoinsRepository())) {
             
             self.coins = coins
@@ -28,7 +30,7 @@ extension CoinsView {
         
         private func getCoins(with currency: String) {
             coinsUseCase
-                .loadCoins(currency: currency, search: nil)
+                .loadCoins(currency: currency, search: search)
                 .receive(on: DispatchQueue.main)
                 .sink { completion in
                     switch completion {
@@ -37,7 +39,19 @@ extension CoinsView {
                     case .finished: break
                     }
                 } receiveValue: { [weak self] coins in
-                    self?.coins = coins
+                    guard self != nil else { return }
+                    
+                    if self?.search.isEmpty == false {
+                        self?.coins = coins.filter({ (coin: Coin) -> Bool in
+                            guard let name = coin.name else {
+                                return false
+                            }
+                            
+                            return name.contains(self?.search ?? "")
+                        })
+                    } else {
+                        self?.coins = coins
+                    }
                 }
                 .store(in: &cancellables)
         }

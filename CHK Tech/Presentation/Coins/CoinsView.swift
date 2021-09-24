@@ -31,7 +31,7 @@ struct CoinsView: View {
                         
                 )
                 {
-                    ForEach(viewModel.coins.data, id: \.id) { coin in
+                    ForEach(viewModel.coins, id: \.id) { coin in
                         
                         HStack {
                             CoinView(viewModel: CoinView.ViewModel(coin: coin))
@@ -58,6 +58,6 @@ struct CoinsView: View {
 
 struct CoinsView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinsView(viewModel: CoinsView.ViewModel(coins: Coins(data: [Coin.fake(), Coin.fake()]), coinsUseCase: CoinsUseCase(coinsRepository: CoinsRepository())))
+        CoinsView(viewModel: CoinsView.ViewModel(coins: [Coin.fake(), Coin.fake()], coinsUseCase: CoinsUseCase(coinsRepository: CoinsRepository())))
     }
 }
