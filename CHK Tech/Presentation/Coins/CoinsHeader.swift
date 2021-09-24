@@ -19,6 +19,13 @@ struct CoinsHeader: View {
         }
         .font(.subheadline)
         .foregroundColor(.gray)
+        .padding()
+        .background(Color.white)
+        .listRowInsets(EdgeInsets(
+            top: 0,
+            leading: 0,
+            bottom: 0,
+            trailing: 0))
     }
 }
 

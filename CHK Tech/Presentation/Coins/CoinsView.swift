@@ -10,12 +10,27 @@ import SwiftUI
 struct CoinsView: View {
     @ObservedObject var viewModel: ViewModel
     
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+        
+        if #available(iOS 14.0, *) {
+            // iOS 14 doesn't have extra separators below the list by default.
+        } else {
+            // To remove only extra separators below the list:
+            UITableView.appearance().tableFooterView = UIView()
+        }
+        
+        // To remove all separators including the actual ones:
+        UITableView.appearance().separatorStyle = .none
+    }
+    
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack {
-                    CoinsHeader()
-                    
+            List {
+                Section(header: CoinsHeader()
+                        
+                )
+                {
                     ForEach(viewModel.coins.data, id: \.id) { coin in
                         
                         HStack {
@@ -30,12 +45,11 @@ struct CoinsView: View {
                         }
                         .listRowInsets(EdgeInsets())
                         .padding()
-                        
                     }
-                    .listRowInsets(EdgeInsets())
-                    
-                }.navigationTitle("Coinhako")
+                }
+                
             }
+            .navigationTitle("Coinhako")
         }.onAppear(perform: {
             viewModel.onAppear()
         })
