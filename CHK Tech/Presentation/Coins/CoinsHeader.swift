@@ -9,23 +9,29 @@ import SwiftUI
 
 struct CoinsHeader: View {
     var body: some View {
-        HStack (alignment: .center) {
-            Text("PAIRS")
+        VStack {
+            HStack (alignment: .center) {
+                Text("PAIRS")
                 
+                
+                Spacer()
+                
+                Text("PRICE")
+                
+                
+            }
+            .font(.subheadline)
+            .foregroundColor(.gray)
+            .padding()
             
-            Spacer()
-            
-            Text("PRICE")
+            Divider()
         }
-        .font(.subheadline)
-        .foregroundColor(.gray)
-        .padding()
         .background(Color.white)
         .listRowInsets(EdgeInsets(
-            top: 0,
-            leading: 0,
-            bottom: 0,
-            trailing: 0))
+                        top: 0,
+                        leading: 0,
+                        bottom: 0,
+                        trailing: 0))
     }
 }
 
