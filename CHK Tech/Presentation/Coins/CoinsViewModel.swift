@@ -33,7 +33,7 @@ extension CoinsView {
                 })
                 .store(in: &cancellables)
             
-            Timer.publish(every: 10, on: .current, in: .common)
+            Timer.publish(every: 30, on: .current, in: .common)
                 .autoconnect()
                 .receive(on: scheduler)
                 .sink { [weak self] (_) in
