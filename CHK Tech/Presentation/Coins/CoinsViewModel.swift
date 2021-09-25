@@ -63,6 +63,7 @@ extension CoinsView {
                     }
                     
                     DispatchQueue.main.sync {
+                        print("======== \(#function)")
                         self.coins = results
                     }
                 })

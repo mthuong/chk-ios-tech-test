@@ -26,7 +26,9 @@ struct SearchBar: View {
                 }).foregroundColor(.primary)
                 
                 Button(action: {
-                    self.searchText = ""
+                    if !self.searchText.isEmpty {
+                        self.searchText = ""
+                    }
                 }) {
                     Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
                 }
@@ -40,7 +42,9 @@ struct SearchBar: View {
                 Button("Cancel") {
                     // Dismiss keyboard
                     UIApplication.shared.endEditing(true)
-                    self.searchText = ""
+                    if !self.searchText.isEmpty {
+                        self.searchText = ""
+                    }
                     withAnimation {
                         self.showCancelButton = false
                     }
