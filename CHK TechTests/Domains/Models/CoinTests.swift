@@ -21,7 +21,7 @@ class CoinTests: XCTestCase {
     func testCoinFullProperties() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let coinFake = Coin.fake()
+        let coinFake = Coin.fake(buyPrice: "30434.093", sellPrice: "434.093")
         let base = "LTC",
         counter = "USD",
         buyPrice = "30434.093",

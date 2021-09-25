@@ -60,8 +60,10 @@ private extension CoinsView {
     }
 }
 
+#if DEBUG
 struct CoinsView_Previews: PreviewProvider {
     static var previews: some View {
         CoinsView(viewModel: CoinsView.ViewModel(coins: [Coin.fake(), Coin.fake()], coinsUseCase: CoinsUseCase(coinsRepository: CoinsRepository())))
     }
 }
+#endif

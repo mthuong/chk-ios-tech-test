@@ -32,6 +32,7 @@ struct CoinsHeader: View {
     }
 }
 
+#if DEBUG
 struct CoinsHeader_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -40,3 +41,4 @@ struct CoinsHeader_Previews: PreviewProvider {
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }
+#endif

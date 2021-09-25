@@ -40,6 +40,7 @@ struct CoinView: View {
     }
 }
 
+#if !TESTING
 struct CoinView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -49,3 +50,4 @@ struct CoinView_Previews: PreviewProvider {
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }
+#endif

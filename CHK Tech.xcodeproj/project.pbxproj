@@ -13,6 +13,7 @@
 		030229DD26FF725F008C9BDE /* CoinsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030229BE26FF5B2C008C9BDE /* CoinsRepositoryMock.swift */; };
 		030229F826FF78D4008C9BDE /* all_prices_for_mobile.json in Resources */ = {isa = PBXBuildFile; fileRef = 030229D526FF5FC6008C9BDE /* all_prices_for_mobile.json */; };
 		03022A2026FF9BEF008C9BDE /* CoinViewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03022A1F26FF9BEF008C9BDE /* CoinViewViewModelTests.swift */; };
+		03022A2C26FFA7BA008C9BDE /* CoinsHeaderUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03022A2B26FFA7BA008C9BDE /* CoinsHeaderUITest.swift */; };
 		034E57A926FEEA8E007ABE83 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57A826FEEA8E007ABE83 /* SearchBar.swift */; };
 		034E57AE26FEF0F4007ABE83 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57AD26FEF0F4007ABE83 /* Extension.swift */; };
 		034E57B526FF112B007ABE83 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57B426FF112B007ABE83 /* ColorTests.swift */; };
@@ -76,6 +77,7 @@
 		030229C726FF5BCF008C9BDE /* CoinsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		030229D526FF5FC6008C9BDE /* all_prices_for_mobile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all_prices_for_mobile.json; sourceTree = "<group>"; };
 		03022A1F26FF9BEF008C9BDE /* CoinViewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinViewViewModelTests.swift; sourceTree = "<group>"; };
+		03022A2B26FFA7BA008C9BDE /* CoinsHeaderUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsHeaderUITest.swift; sourceTree = "<group>"; };
 		034E57A826FEEA8E007ABE83 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		034E57AD26FEF0F4007ABE83 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		034E57B426FF112B007ABE83 /* ColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 				03022A1F26FF9BEF008C9BDE /* CoinViewViewModelTests.swift */,
 			);
 			path = Coin;
+			sourceTree = "<group>";
+		};
+		03022A2A26FFA7A9008C9BDE /* Coins */ = {
+			isa = PBXGroup;
+			children = (
+				03022A2B26FFA7BA008C9BDE /* CoinsHeaderUITest.swift */,
+			);
+			path = Coins;
 			sourceTree = "<group>";
 		};
 		034E57A726FEEA00007ABE83 /* SearchBar */ = {
@@ -476,6 +486,7 @@
 		03A3C01226FC5FFB00DA595F /* CHK TechUITests */ = {
 			isa = PBXGroup;
 			children = (
+				03022A2A26FFA7A9008C9BDE /* Coins */,
 				03A3C01326FC5FFB00DA595F /* CHK_TechUITests.swift */,
 				03A3C01526FC5FFB00DA595F /* Info.plist */,
 			);
@@ -667,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A3C01426FC5FFB00DA595F /* CHK_TechUITests.swift in Sources */,
+				03022A2C26FFA7BA008C9BDE /* CoinsHeaderUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +698,128 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		03022A3326FFAA17008C9BDE /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TESTING;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Testing;
+		};
+		03022A3426FFAA17008C9BDE /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CHK Tech/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "CHK Tech/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tom.app..CHK-Tech";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Testing;
+		};
+		03022A3526FFAA17008C9BDE /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CHK TechTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tom.app..CHK-TechTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHK Tech.app/CHK Tech";
+			};
+			name = Testing;
+		};
+		03022A3626FFAA17008C9BDE /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CHK TechUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tom.app..CHK-TechUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CHK Tech";
+			};
+			name = Testing;
+		};
 		03A3C01626FC5FFB00DA595F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -931,6 +1065,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03A3C01626FC5FFB00DA595F /* Debug */,
+				03022A3326FFAA17008C9BDE /* Testing */,
 				03A3C01726FC5FFB00DA595F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -940,6 +1075,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03A3C01926FC5FFB00DA595F /* Debug */,
+				03022A3426FFAA17008C9BDE /* Testing */,
 				03A3C01A26FC5FFB00DA595F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -949,6 +1085,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03A3C01C26FC5FFB00DA595F /* Debug */,
+				03022A3526FFAA17008C9BDE /* Testing */,
 				03A3C01D26FC5FFB00DA595F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -958,6 +1095,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03A3C01F26FC5FFB00DA595F /* Debug */,
+				03022A3626FFAA17008C9BDE /* Testing */,
 				03A3C02026FC5FFB00DA595F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
