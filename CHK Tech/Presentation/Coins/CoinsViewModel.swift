@@ -29,6 +29,7 @@ extension CoinsView {
                 .dropFirst(1)
                 .debounce(for: .seconds(0.5), scheduler: scheduler)
                 .sink(receiveValue: { [weak self] (_) in
+                    print("$search")
                     self?.getCoins(with: "USD")
                 })
                 .store(in: &cancellables)
@@ -37,9 +38,14 @@ extension CoinsView {
                 .autoconnect()
                 .receive(on: scheduler)
                 .sink { [weak self] (_) in
+                    print("getCoins 30s")
                     self?.getCoins(with: "USD")
                 }
                 .store(in: &cancellables)
+        }
+        
+        public func onAppear() {
+            getCoins(with: "USD")
         }
         
         private func getCoins(with currency: String) {

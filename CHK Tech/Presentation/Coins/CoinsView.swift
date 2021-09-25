@@ -57,8 +57,10 @@ struct CoinsView: View {
                         .padding()
                     }
                 }
-                
             }
+            .onAppear(perform: {
+                viewModel.onAppear()
+            })
             .navigationTitle("Coinhako")
         }
     }

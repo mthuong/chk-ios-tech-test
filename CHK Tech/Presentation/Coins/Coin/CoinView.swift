@@ -29,10 +29,10 @@ struct CoinView: View {
             Spacer()
             
             VStack (alignment: .trailing) {
-                Text(coin.buyPrice ?? "")
+                Text(viewModel.buyPrice)
                     .foregroundColor(Color.init(hex: "0ecb81"))
                     .font(.system(size: 17))
-                Text(coin.sellPrice ?? "")
+                Text(viewModel.sellPrice)
                     .foregroundColor(Color(hex: "f6465d"))
                     .font(.system(size: 16))
             }

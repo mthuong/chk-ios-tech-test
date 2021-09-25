@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		034E57A926FEEA8E007ABE83 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57A826FEEA8E007ABE83 /* SearchBar.swift */; };
 		034E57AE26FEF0F4007ABE83 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57AD26FEF0F4007ABE83 /* Extension.swift */; };
+		034E57B526FF112B007ABE83 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57B426FF112B007ABE83 /* ColorTests.swift */; };
+		034E57D926FF240D007ABE83 /* FormattersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57D826FF240D007ABE83 /* FormattersTests.swift */; };
 		037C6C6D26FDA591008D1947 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C6C6C26FDA591008D1947 /* ContentView.swift */; };
 		037C6C9126FDA8DD008D1947 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C6C9026FDA8DD008D1947 /* Networking.swift */; };
 		037C6C9626FDA91E008D1947 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C6C9526FDA91E008D1947 /* NetworkError.swift */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		034E57A826FEEA8E007ABE83 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		034E57AD26FEF0F4007ABE83 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		034E57B426FF112B007ABE83 /* ColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
+		034E57D826FF240D007ABE83 /* FormattersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattersTests.swift; sourceTree = "<group>"; };
 		037C6C6C26FDA591008D1947 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		037C6C9026FDA8DD008D1947 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		037C6C9526FDA91E008D1947 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -133,6 +137,31 @@
 				034E57AD26FEF0F4007ABE83 /* Extension.swift */,
 			);
 			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		034E57B226FF109A007ABE83 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				034E57D726FF23A5007ABE83 /* Formatters */,
+				034E57B326FF10A2007ABE83 /* Color */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		034E57B326FF10A2007ABE83 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				034E57B426FF112B007ABE83 /* ColorTests.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		034E57D726FF23A5007ABE83 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				034E57D826FF240D007ABE83 /* FormattersTests.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		037C6C6926FDA53C008D1947 /* Presentation */ = {
@@ -332,6 +361,7 @@
 		03A3C00726FC5FFB00DA595F /* CHK TechTests */ = {
 			isa = PBXGroup;
 			children = (
+				034E57B226FF109A007ABE83 /* Utilities */,
 				03A3C00826FC5FFB00DA595F /* CHK_TechTests.swift */,
 				03A3C00A26FC5FFB00DA595F /* Info.plist */,
 			);
@@ -513,6 +543,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A3C00926FC5FFB00DA595F /* CHK_TechTests.swift in Sources */,
+				034E57D926FF240D007ABE83 /* FormattersTests.swift in Sources */,
+				034E57B526FF112B007ABE83 /* ColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -646,7 +678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -665,7 +697,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CHK Tech/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "CHK Tech/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -686,7 +718,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CHK Tech/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "CHK Tech/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
