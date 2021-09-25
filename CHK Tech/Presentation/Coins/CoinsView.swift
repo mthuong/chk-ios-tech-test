@@ -27,9 +27,19 @@ struct CoinsView: View {
     var body: some View {
         NavigationView {
             List {
+                Section(header:                 searchField
+                            .padding()
+                ) { }
+                .background(Color.white)
+                .listRowInsets(EdgeInsets(
+                                top: 0,
+                                leading: 0,
+                                bottom: 0,
+                                trailing: 0))
+                .textCase(nil)
+                
                 Section(header: CoinsHeader()
-                        
-                )
+                .listRowInsets(EdgeInsets()))
                 {
                     ForEach(viewModel.coins, id: \.id) { coin in
                         
@@ -53,6 +63,12 @@ struct CoinsView: View {
         }.onAppear(perform: {
             viewModel.onAppear()
         })
+    }
+}
+
+private extension CoinsView {
+    var searchField: some View {
+        SearchBar(searchText: $viewModel.search)
     }
 }
 
