@@ -16,10 +16,10 @@ extension CoinsView {
         
         private var coinsUseCase: CoinsUseCaseProtocol
         private var cancellables = Set<AnyCancellable>()
-        
+
         init(coins: [Coin] = [],
              coinsUseCase: CoinsUseCaseProtocol = CoinsUseCase(coinsRepository: CoinsRepository()),
-             scheduler: DispatchQueue = DispatchQueue(label: "SearchViewModel")
+             scheduler: DispatchQueue = DispatchQueue(label: "FetchDataViewModel")
         ) {
             
             self.coins = coins
@@ -33,13 +33,14 @@ extension CoinsView {
                 })
                 .store(in: &cancellables)
             
+            Timer.publish(every: 10, on: .current, in: .common)
+                .autoconnect()
+                .receive(on: scheduler)
+                .sink { [weak self] (_) in
+                    self?.getCoins(with: "USD")
+                }
+                .store(in: &cancellables)
         }
-        
-        public func onAppear() {
-            self.getCoins(with: "USD")
-        }
-        
-        
         
         private func getCoins(with currency: String) {
             coinsUseCase
@@ -55,7 +56,7 @@ extension CoinsView {
                     guard self != nil else { return }
                     
                     if self?.search.isEmpty == false {
-                        self?.coins = coins.filter({ (coin: Coin) -> Bool in                            
+                        self?.coins = coins.filter({ (coin: Coin) -> Bool in
                             return coin.base.uppercased().contains(self?.search.uppercased() ?? "")
                         })
                     } else {

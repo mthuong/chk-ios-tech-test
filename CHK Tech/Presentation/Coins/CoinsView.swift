@@ -60,9 +60,7 @@ struct CoinsView: View {
                 
             }
             .navigationTitle("Coinhako")
-        }.onAppear(perform: {
-            viewModel.onAppear()
-        })
+        }
     }
 }
 
