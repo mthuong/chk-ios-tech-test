@@ -13,8 +13,10 @@ struct CoinDetails: View {
     }
 }
 
+#if !TESTING
 struct CoinDetails_Previews: PreviewProvider {
     static var previews: some View {
         CoinDetails()
     }
 }
+#endif

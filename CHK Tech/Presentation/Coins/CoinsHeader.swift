@@ -32,7 +32,7 @@ struct CoinsHeader: View {
     }
 }
 
-#if DEBUG
+#if !TESTING
 struct CoinsHeader_Previews: PreviewProvider {
     static var previews: some View {
         Group {

@@ -38,6 +38,7 @@ struct AsyncImage<Placeholder: View>: View {
     }
 }
 
+#if !TESTING
 struct AsyncImage_Previews: PreviewProvider {
     static var previews: some View {
         AsyncImage(url: URL(string: "https://cdn.coinhako.com/assets/wallet-btc-6af73eef204cc6dccf1aedd5549390fbc44b97e0a8e825f305bd820b436002a3.png"), placeholder: {
@@ -47,3 +48,4 @@ struct AsyncImage_Previews: PreviewProvider {
         .frame(width: 200, height: 200, alignment: .center)
     }
 }
+#endif

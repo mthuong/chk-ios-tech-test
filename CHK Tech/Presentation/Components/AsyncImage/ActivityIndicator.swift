@@ -21,8 +21,10 @@ struct ActivityIndicator: UIViewRepresentable {
     }
 }
 
+#if !TESTING
 struct ActivityIndicator_Previews: PreviewProvider {
     static var previews: some View {
         ActivityIndicator(isAnimating: .constant(true), style: .medium)
     }
 }
+#endif

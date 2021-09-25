@@ -55,6 +55,7 @@ struct SearchBar: View {
     }
 }
 
+#if !TESTING
 struct SearchBar_Previews: PreviewProvider {
     @State static var searchText = ""
     
@@ -65,3 +66,4 @@ struct SearchBar_Previews: PreviewProvider {
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }
+#endif
