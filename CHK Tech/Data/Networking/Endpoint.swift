@@ -8,6 +8,10 @@
 import Foundation
 
 struct Endpoint {
+    var scheme: String = "https"
+    var host: String = "www.coinhako.com"
+    var defaultPath = "/api"
+    
     var path: String
     var queryItems: [URLQueryItem] = []
 }

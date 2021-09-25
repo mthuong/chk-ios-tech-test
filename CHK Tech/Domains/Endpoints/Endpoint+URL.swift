@@ -10,9 +10,9 @@ import Foundation
 extension Endpoint {
     var url: URL {
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = "www.coinhako.com"
-        components.path = "/api" + path
+        components.scheme = self.scheme
+        components.host = self.host
+        components.path = self.defaultPath + path
         components.queryItems = queryItems
         
         guard let url = components.url else {
