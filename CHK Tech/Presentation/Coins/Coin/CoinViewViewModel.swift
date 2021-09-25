@@ -28,7 +28,11 @@ extension CoinView {
                 return ""
             }
             
-            return priceFormatter.string(from: number) ?? ""
+            if number.intValue > 1000 {
+                return priceFormatter.string(from: number) ?? ""
+            }
+            
+            return coin.buyPrice ?? ""
         }
         
         var sellPrice: String {
@@ -40,7 +44,11 @@ extension CoinView {
                 return ""
             }
             
-            return priceFormatter.string(from: number) ?? ""
+            if number.intValue > 1000 {
+                return priceFormatter.string(from: number) ?? ""
+            }
+            
+            return coin.sellPrice ?? ""
         }
     }
 }

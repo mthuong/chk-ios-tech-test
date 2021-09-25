@@ -13,7 +13,7 @@ class FormattersTests: XCTestCase {
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-//        numberFormatter = priceFormatter()
+        numberFormatter = priceFormatter
     }
 
     override func tearDownWithError() throws {
@@ -22,7 +22,9 @@ class FormattersTests: XCTestCase {
     }
 
     func testPriceFormatter() throws {
-        numberFormatter.string(from: <#T##NSNumber#>)
+        let expectedValue = "12,345.678"
+        
+//        let formattedNumber = numberFormatter.string(from: @(12345.6789))
     }
 
     func testPerformanceExample() throws {

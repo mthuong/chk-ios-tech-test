@@ -37,7 +37,7 @@ extension Coin {
             base: "LTC",
             counter: "USD",
             buyPrice: "30434.093",
-            sellPrice: "30434.093",
+            sellPrice: "434.093",
             icon: "https://cdn.coinhako.com/assets/wallet-ltc-e4ce25a8fb34c45d40165b6f4eecfbca2729c40c20611acd45ea0dc3ab50f8a6.png",
             name: "Litecoin"
         )

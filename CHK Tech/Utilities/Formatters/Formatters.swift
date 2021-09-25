@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct PriceFormatter {
+    
+}
+
 let priceFormatter: NumberFormatter = {
     let numberFormatter = NumberFormatter()
     numberFormatter.groupingSeparator = ","
