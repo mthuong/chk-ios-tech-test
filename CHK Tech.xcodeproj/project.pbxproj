@@ -13,6 +13,8 @@
 		034E57D926FF240D007ABE83 /* FormattersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57D826FF240D007ABE83 /* FormattersTests.swift */; };
 		034E57E926FF339E007ABE83 /* Endpoint+URLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57E826FF339E007ABE83 /* Endpoint+URLTests.swift */; };
 		034E57F126FF3C15007ABE83 /* Endpoint+CoinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57F026FF3C15007ABE83 /* Endpoint+CoinsTests.swift */; };
+		034E57F726FF3CF8007ABE83 /* CoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E57F626FF3CF8007ABE83 /* CoinTests.swift */; };
+		034E580126FF3ECA007ABE83 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E580026FF3ECA007ABE83 /* EndpointTests.swift */; };
 		037C6C6D26FDA591008D1947 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C6C6C26FDA591008D1947 /* ContentView.swift */; };
 		037C6C9126FDA8DD008D1947 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C6C9026FDA8DD008D1947 /* Networking.swift */; };
 		037C6C9626FDA91E008D1947 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C6C9526FDA91E008D1947 /* NetworkError.swift */; };
@@ -70,6 +72,8 @@
 		034E57D826FF240D007ABE83 /* FormattersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattersTests.swift; sourceTree = "<group>"; };
 		034E57E826FF339E007ABE83 /* Endpoint+URLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+URLTests.swift"; sourceTree = "<group>"; };
 		034E57F026FF3C15007ABE83 /* Endpoint+CoinsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+CoinsTests.swift"; sourceTree = "<group>"; };
+		034E57F626FF3CF8007ABE83 /* CoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTests.swift; sourceTree = "<group>"; };
+		034E580026FF3ECA007ABE83 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		037C6C6C26FDA591008D1947 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		037C6C9026FDA8DD008D1947 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		037C6C9526FDA91E008D1947 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 		034E57E626FF3379007ABE83 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
+				034E57F526FF3CDA007ABE83 /* Models */,
 				034E57E726FF3389007ABE83 /* Endpoints */,
 			);
 			path = Domains;
@@ -183,6 +188,30 @@
 				034E57F026FF3C15007ABE83 /* Endpoint+CoinsTests.swift */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		034E57F526FF3CDA007ABE83 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				034E57F626FF3CF8007ABE83 /* CoinTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		034E57FE26FF3EB2007ABE83 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				034E57FF26FF3EB6007ABE83 /* Networking */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		034E57FF26FF3EB6007ABE83 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				034E580026FF3ECA007ABE83 /* EndpointTests.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		037C6C6926FDA53C008D1947 /* Presentation */ = {
@@ -382,6 +411,7 @@
 		03A3C00726FC5FFB00DA595F /* CHK TechTests */ = {
 			isa = PBXGroup;
 			children = (
+				034E57FE26FF3EB2007ABE83 /* Data */,
 				034E57B226FF109A007ABE83 /* Utilities */,
 				034E57E626FF3379007ABE83 /* Domains */,
 				03A3C00826FC5FFB00DA595F /* CHK_TechTests.swift */,
@@ -564,10 +594,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034E57F726FF3CF8007ABE83 /* CoinTests.swift in Sources */,
 				034E57E926FF339E007ABE83 /* Endpoint+URLTests.swift in Sources */,
 				034E57F126FF3C15007ABE83 /* Endpoint+CoinsTests.swift in Sources */,
 				03A3C00926FC5FFB00DA595F /* CHK_TechTests.swift in Sources */,
 				034E57D926FF240D007ABE83 /* FormattersTests.swift in Sources */,
+				034E580126FF3ECA007ABE83 /* EndpointTests.swift in Sources */,
 				034E57B526FF112B007ABE83 /* ColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
