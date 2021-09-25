@@ -8,12 +8,6 @@
 import Foundation
 import Combine
 
-protocol CoinsRepositoryProtocol: AnyObject {
-    var networking: NetworkingProtocol { get }
-    
-    func getCoins(currency: String) -> AnyPublisher<[Coin], Error>
-}
-
 final class CoinsRepository: CoinsRepositoryProtocol {
     let networking: NetworkingProtocol
     

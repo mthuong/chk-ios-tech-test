@@ -16,7 +16,7 @@ extension CoinsView {
         
         private var coinsUseCase: CoinsUseCaseProtocol
         private var cancellables = Set<AnyCancellable>()
-
+        
         init(coins: [Coin] = [],
              coinsUseCase: CoinsUseCaseProtocol = CoinsUseCase(coinsRepository: CoinsRepository()),
              scheduler: DispatchQueue = DispatchQueue(label: "FetchDataViewModel")
@@ -29,7 +29,7 @@ extension CoinsView {
                 .dropFirst(1)
                 .debounce(for: .seconds(0.5), scheduler: scheduler)
                 .sink(receiveValue: { [weak self] (_) in
-//                    print("$search")
+                    //                    print("$search")
                     self?.getCoins(with: "USD")
                 })
                 .store(in: &cancellables)
@@ -38,37 +38,33 @@ extension CoinsView {
                 .autoconnect()
                 .receive(on: scheduler)
                 .sink { [weak self] (_) in
-//                    print("getCoins 30s")
+                    //                    print("getCoins 30s")
                     self?.getCoins(with: "USD")
                 }
                 .store(in: &cancellables)
         }
         
         public func onAppear() {
-            getCoins(with: "USD")
+            return getCoins(with: "USD")
         }
         
         private func getCoins(with currency: String) {
-            coinsUseCase
-                .loadCoins(currency: currency, search: search)
-                .receive(on: DispatchQueue.main)
-                .sink { completion in
-                    switch completion {
-                    case .failure(let error):
-                        print(error)
-                    case .finished: break
-                    }
-                } receiveValue: { [weak self] coins in
-                    guard self != nil else { return }
+            return coinsUseCase
+                .loadCoins(currency: currency, search: search, { [weak self] (coins: [Coin]) in
+                    guard let self = self else { return }
                     
-                    if self?.search.isEmpty == false {
-                        self?.coins = coins.filter({ (coin: Coin) -> Bool in
-                            return coin.base.uppercased().contains(self?.search.uppercased() ?? "")
+                    var results: [Coin]
+                    if self.search.isEmpty == false {
+                        results = coins.filter({ (coin: Coin) -> Bool in
+                            return coin.base.uppercased().contains(self.search.uppercased())
                         })
                     } else {
-                        self?.coins = coins
+                        results = coins
                     }
-                }
+                    DispatchQueue.main.async {
+                        self.coins = results
+                    }
+                })
                 .store(in: &cancellables)
         }
     }

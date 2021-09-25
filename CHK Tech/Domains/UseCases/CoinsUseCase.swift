@@ -7,9 +7,10 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 protocol CoinsUseCaseProtocol {
-    func loadCoins(currency: String, search: String?) -> AnyPublisher<[Coin], Error>
+    func loadCoins(currency: String, search: String?, _ completion: @escaping ([Coin]) -> Void) -> AnyCancellable
 }
 
 final class CoinsUseCase: CoinsUseCaseProtocol {
@@ -20,10 +21,12 @@ final class CoinsUseCase: CoinsUseCaseProtocol {
         self.coinsRepository = coinsRepository
     }
     
-    func loadCoins(currency: String = "USD", search: String?) -> AnyPublisher<[Coin], Error>{
-        coinsRepository
+    func loadCoins(currency: String = "USD", search: String?, _ completion: @escaping ([Coin]) -> Void) -> AnyCancellable {
+        return coinsRepository
             .getCoins(currency: currency)
-            .eraseToAnyPublisher()
-        
+            .replaceError(with: [])
+            .sink {
+                completion($0)
+            }
     }
 }

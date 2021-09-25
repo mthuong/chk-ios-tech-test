@@ -12,24 +12,12 @@ struct CoinsView: View {
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
-        
-        if #available(iOS 14.0, *) {
-            // iOS 14 doesn't have extra separators below the list by default.
-        } else {
-            // To remove only extra separators below the list:
-            UITableView.appearance().tableFooterView = UIView()
-        }
-        
-        // To remove all separators including the actual ones:
-        UITableView.appearance().separatorStyle = .none
     }
     
     var body: some View {
         NavigationView {
             List {
-                Section(header:                 searchField
-                            .padding()
-                ) { }
+                Section(header: searchField.padding()) { }
                 .background(Color.white)
                 .listRowInsets(EdgeInsets(
                                 top: 0,
@@ -38,8 +26,7 @@ struct CoinsView: View {
                                 trailing: 0))
                 .textCase(nil)
                 
-                Section(header: CoinsHeader()
-                .listRowInsets(EdgeInsets()))
+                Section(header: CoinsHeader().listRowInsets(EdgeInsets()))
                 {
                     ForEach(viewModel.coins, id: \.id) { coin in
                         
@@ -58,6 +45,7 @@ struct CoinsView: View {
                     }
                 }
             }
+            .resignKeyboardOnTapGesture()
             .onAppear(perform: {
                 viewModel.onAppear()
             })
