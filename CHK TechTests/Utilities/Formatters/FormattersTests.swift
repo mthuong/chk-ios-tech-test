@@ -22,15 +22,18 @@ class FormattersTests: XCTestCase {
     }
 
     func testPriceFormatter() throws {
-        let expectedValue = "12,345.678"
+        let expectedValue = "12,345.68"
         
-//        let formattedNumber = numberFormatter.string(from: @(12345.6789))
+        let formattedNumber = numberFormatter.string(from: 12345.6789)
+        
+        XCTAssertEqual(formattedNumber, expectedValue)
     }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
+            _ = numberFormatter.string(from: 12345.6789)
         }
     }
 
