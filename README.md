@@ -1,1 +1,6 @@
-# chk-ios-tech-test
+# CHK Tech Test Design Document
+
+## ⭐ Demo
+
+
+## ⛓ CLEAN MVVM 
