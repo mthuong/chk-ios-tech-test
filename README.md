@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/1086057/134797520-321436f2-3839-40f6-a
 - XCode 12.4 or later
 - iOS 14 or later
 
-### ✅ UnitTest
+### ✅ UnitTest - UITest
 
 ```bash
 xcodebuild test -project CHK\ Tech.xcodeproj -scheme CHK\ Tech -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max,OS=14.4'
