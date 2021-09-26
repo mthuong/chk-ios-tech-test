@@ -62,3 +62,18 @@ It is totally independent and can be reused by other projects.
 - `ViewModel` keep the state of the `View` by having `Published` properties and binding them to the data it receives from use cases.
 - `Router` responsible for navigation.
 - It depends on `Domain` layer.
+
+The main purpose of applying software architect in development that will help to easier maintenance the project, add new feature and didn't break other feature, the most important thing: our code is testable.
+
+The example project has **90%** test coverage, that's so good.
+
+### 🥈 SwiftUI
+
+As Apple, SwiftUI is a modern way to declare user interfaces for any Apple platform. Create beautiful, dynamic apps faster than ever before.
+We can preview the code instantly. It will compiled the UI — visible, and editable at all times. Previews can also display your UI in any device and any orientation.
+
+### 🥉 Combine
+
+It's a new framework provides a declarative Swift API for processing values over time. Now we can replace RxSwift, ReactiveSwift with Combine.
+
+It’s a powerful framework to dynamically respond to value changes over time.
