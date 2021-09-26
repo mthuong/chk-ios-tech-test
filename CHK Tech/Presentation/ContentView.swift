@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CoinsView(viewModel: CoinsViewViewModel())
+        CoinsView(viewModel: CoinsView.ViewModel())
     }
 }
 

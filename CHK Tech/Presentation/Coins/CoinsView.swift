@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CoinsView: View {
-    @ObservedObject var viewModel: CoinsViewViewModel
+    @ObservedObject var viewModel: ViewModel
     
-    init(viewModel: CoinsViewViewModel) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
     
@@ -63,7 +63,7 @@ private extension CoinsView {
 #if !TESTING
 struct CoinsView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinsView(viewModel: CoinsViewViewModel(coins: [Coin.fake(), Coin.fake()], coinsUseCase: CoinsUseCase(coinsRepository: CoinsRepository())))
+        CoinsView(viewModel: CoinsView.ViewModel(coins: [Coin.fake(), Coin.fake()], coinsUseCase: CoinsUseCase(coinsRepository: CoinsRepository())))
     }
 }
 #endif

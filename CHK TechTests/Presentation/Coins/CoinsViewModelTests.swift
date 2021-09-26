@@ -10,7 +10,7 @@ import XCTest
 import Combine
 
 class CoinsViewModelTests: XCTestCase {
-    var viewModel: CoinsViewViewModel!
+    var viewModel: CoinsView.ViewModel!
     private var cancellables: Set<AnyCancellable>!
 
     class CoinsUseCaseMock: CoinsUseCaseProtocol {
@@ -56,7 +56,7 @@ class CoinsViewModelTests: XCTestCase {
         
         let useCase = CoinsUseCaseMock.init(coinsRepository: CoinsRepositoryMock(), expectation: expectation)
         
-        viewModel = CoinsViewViewModel(coins: [], coinsUseCase: useCase, scheduler: DispatchQueue.init(label: #function))
+        viewModel = CoinsView.ViewModel(coins: [], coinsUseCase: useCase, scheduler: DispatchQueue.init(label: #function))
         
         viewModel.onAppear()
         
@@ -73,7 +73,7 @@ class CoinsViewModelTests: XCTestCase {
         
         let useCase = CoinsUseCaseMock.init(coinsRepository: CoinsRepositoryMock(), expectation: expectation)
         
-        viewModel = CoinsViewViewModel(coins: [], coinsUseCase: useCase, scheduler: DispatchQueue.init(label: #function))
+        viewModel = CoinsView.ViewModel(coins: [], coinsUseCase: useCase, scheduler: DispatchQueue.init(label: #function))
         // Input search value
         viewModel.search = search
         

@@ -8,7 +8,8 @@
 import SwiftUI
 import Combine
 
-class CoinsViewViewModel: ObservableObject {
+extension CoinsView {
+class ViewModel: ObservableObject {
     @Published var search: String = ""
     
     @Published public var coins: [Coin] = [Coin]([])
@@ -73,4 +74,5 @@ class CoinsViewViewModel: ObservableObject {
                 self.searchCoins(self.search)
             })
     }
+}
 }
