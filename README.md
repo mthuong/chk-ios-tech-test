@@ -69,6 +69,8 @@ The example project has **90%** test coverage, that's so good.
 
 ### 🥈 SwiftUI
 
+![swiftui](https://user-images.githubusercontent.com/1086057/134802041-be644397-3bd1-4893-b956-d55ff1421088.png)
+
 As Apple, SwiftUI is a modern way to declare user interfaces for any Apple platform. Create beautiful, dynamic apps faster than ever before.
 We can preview the code instantly. It will compiled the UI — visible, and editable at all times. Previews can also display your UI in any device and any orientation.
 
