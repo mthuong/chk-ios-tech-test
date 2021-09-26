@@ -10,7 +10,7 @@ import XCTest
 import Combine
 
 class CoinsViewModelTests: XCTestCase {
-    var viewModel: CoinsView.ViewModel!
+    var viewModel: CoinsViewViewModel!
     private var cancellables: Set<AnyCancellable>!
 
     class CoinsUseCaseMock: CoinsUseCaseProtocol {
@@ -26,11 +26,10 @@ class CoinsViewModelTests: XCTestCase {
         }
         
         func loadCoins(currency: String = "USD", search: String?, _ completion: @escaping ([Coin]) -> Void) {
-            coinsRepository
+            self.coinsRepository
                 .getCoins(currency: currency)
                 .replaceError(with: [])
                 .sink { [weak self] coins in
-                    print("============= \(#function)")
                     
                     completion(coins)
                     
@@ -55,9 +54,9 @@ class CoinsViewModelTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let expectation = self.expectation(description: #function)
         
-        let useCase = CoinsUseCaseMock(coinsRepository: CoinsRepositoryMock(), expectation: expectation)
+        let useCase = CoinsUseCaseMock.init(coinsRepository: CoinsRepositoryMock(), expectation: expectation)
         
-        viewModel = CoinsView.ViewModel(coins: [], coinsUseCase: useCase, scheduler: DispatchQueue.init(label: #function))
+        viewModel = CoinsViewViewModel(coins: [], coinsUseCase: useCase, scheduler: DispatchQueue.init(label: #function))
         
         viewModel.onAppear()
         
@@ -72,11 +71,14 @@ class CoinsViewModelTests: XCTestCase {
         let expectation = self.expectation(description: #function)
         let search = "Bt"
         
-        let useCase = CoinsUseCaseMock(coinsRepository: CoinsRepositoryMock(), expectation: expectation)
+        let useCase = CoinsUseCaseMock.init(coinsRepository: CoinsRepositoryMock(), expectation: expectation)
         
-        viewModel = CoinsView.ViewModel(coins: [], coinsUseCase: useCase)
-        
+        viewModel = CoinsViewViewModel(coins: [], coinsUseCase: useCase, scheduler: DispatchQueue.init(label: #function))
+        // Input search value
         viewModel.search = search
+        
+        // Start get data
+        viewModel.onAppear()
         
         wait(for: [expectation], timeout: 10)
         
