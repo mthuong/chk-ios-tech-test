@@ -66,6 +66,8 @@ It is totally independent and can be reused by other projects.
 The main purpose of applying software architect in development that will help to easier maintenance the project, add new feature and didn't break other feature, the most important thing: our code is testable.
 
 The example project has **90%** test coverage, that's so good.
+<img width="590" alt="Screen Shot 2021-09-26 at 5 59 23 PM" src="https://user-images.githubusercontent.com/1086057/134805022-9d6ff4bf-0688-4888-b068-c27e4f869bbb.png">
+
 
 ### 🥈 SwiftUI
 
